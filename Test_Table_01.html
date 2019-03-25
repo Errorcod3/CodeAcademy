@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <head>
 <title>My WorkWeek</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./Test_Table_01.css">
 </head>
 
 <header>
@@ -8,7 +10,7 @@
 </header>
 
 <body>
-  <table border="1">
+  <table border="1" align="center">
     <tr>
       <th>Monday</th>
       <th>Tuesday</th>
@@ -36,7 +38,7 @@
   </table>
   <form>
     <fieldset>
-      <legend>Favorite Programming Language</legend>
+      <h2>Favorite Programming Language</h2>
         <input type="radio" name="language" id="languageOne" value="C">
           <label>C</label>
         <input type="radio" name="language" id="languageTwo" value="VB">
@@ -45,26 +47,19 @@
           <label>JavaScript</label>
         <input type="radio" name="language" id="languageFour" value="TLDR">
           <label>TLDR</label>
-    </fieldset>
-    <fieldset>
-      <legend>Idenfity Any Issues/Problems *Select All That Apply*</legend>
+      <h2>Idenfity Any Issues/Problems</h2>
         <input type="checkbox" name="problem" id="problemOne" value="Too Cold">
           <label>Too Cold</label>
         <input type="checkbox" name="problem" id="problemOne" value="No Music">
           <label>No Music</label>
         <input type="checkbox" name="problem" id="problemOne" value="No Beer">
           <label>No Beer</label>
-    </fieldset>
-    <fieldset>
-        <legend>Additional Comments</legend>
-        <textarea style="height: 100px"></textarea>
-    </fieldset>
-    <fieldset>
-      <legend>E-mail Address</legend>
+      <h5>Select All That Apply</h5>
+        <h2>Additional Comments</h2>
+        <textarea></textarea>
+      <h2>E-mail Address</h2>
         <input type="email">
-    </fieldset>
-    <fieldset>
-      <legend>Submit</legend>
+      <h2></h2>
         <input type="submit">
     </fieldset>
   </form>

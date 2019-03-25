@@ -1,0 +1,15 @@
+header {
+  text-align: center;
+  background-color: black;
+  font-size: 24px;
+  color: white;
+}
+body {
+  text-align: center;
+  font-size: 16px;
+  background-color: lightblue;
+}
+textarea {
+  width: 400px;
+  height: 150px;
+}
