@@ -14,7 +14,8 @@
       <th>Tuesday</th>
       <th>Wednesday</th>
       <th>Thursday</th>
-      <th colspan="3">Weekend</th>
+      <th>Friday</th>
+      <th colspan="2">Weekend</th>
     </tr>
     <tr>
       <td>CSS</td>
@@ -22,7 +23,8 @@
       <td>JavaScript</td>
       <td>MySql</td>
       <td>.NET</td>
-      <td rowspan="2">Partay</td>
+      <td rowspan="2">Party</td>
+      <td rowspan="2">Brunch</td>
     </tr>
     <tr>
       <td>C#</td>
@@ -32,6 +34,40 @@
       <td>HTML</td>
     </tr>
   </table>
+  <form>
+    <fieldset>
+      <legend>Favorite Programming Language</legend>
+        <input type="radio" name="language" id="languageOne" value="C">
+          <label>C</label>
+        <input type="radio" name="language" id="languageTwo" value="VB">
+          <label>VB</label>
+        <input type="radio" name="language" id="languageThree" value="JavaScript">
+          <label>JavaScript</label>
+        <input type="radio" name="language" id="languageFour" value="TLDR">
+          <label>TLDR</label>
+    </fieldset>
+    <fieldset>
+      <legend>Idenfity Any Issues/Problems *Select All That Apply*</legend>
+        <input type="checkbox" name="problem" id="problemOne" value="Too Cold">
+          <label>Too Cold</label>
+        <input type="checkbox" name="problem" id="problemOne" value="No Music">
+          <label>No Music</label>
+        <input type="checkbox" name="problem" id="problemOne" value="No Beer">
+          <label>No Beer</label>
+    </fieldset>
+    <fieldset>
+        <legend>Additional Comments</legend>
+        <textarea style="height: 100px"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>E-mail Address</legend>
+        <input type="email">
+    </fieldset>
+    <fieldset>
+      <legend>Submit</legend>
+        <input type="submit">
+    </fieldset>
+  </form>
 
 </body>
 </html>
