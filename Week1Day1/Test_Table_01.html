@@ -17,7 +17,7 @@
       <th>Wednesday</th>
       <th>Thursday</th>
       <th>Friday</th>
-      <th colspan="2">Weekend</th>  
+      <th colspan="2">Weekend</th>
     </tr>
     <tr>
       <td>CSS</td>
@@ -37,7 +37,6 @@
     </tr>
   </table>
   <form>
-    <fieldset>
       <h2>Favorite Programming Language</h2>
         <input type="radio" name="language" id="languageOne" value="C">
           <label>C</label>
@@ -48,20 +47,28 @@
         <input type="radio" name="language" id="languageFour" value="TLDR">
           <label>TLDR</label>
       <h2>Idenfity Any Issues/Problems</h2>
-        <input type="checkbox" name="problem" id="problemOne" value="Too Cold">
+        <input type="checkbox" name="problem" id="problemOne" value="tooCold">
           <label>Too Cold</label>
-        <input type="checkbox" name="problem" id="problemOne" value="No Music">
+        <input type="checkbox" name="problem" id="problemOne" value="noMusic">
           <label>No Music</label>
-        <input type="checkbox" name="problem" id="problemOne" value="No Beer">
+        <input type="checkbox" name="problem" id="problemOne" value="noBeer">
           <label>No Beer</label>
       <h5>Select All That Apply</h5>
         <h2>Additional Comments</h2>
         <textarea></textarea>
-      <h2>E-mail Address</h2>
+          <div>
+        <label>First Name</label>
+      <input type="text" name="firstName" id="firstName" placeholder="First Name">
+        <label>Last Name</label>
+      <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+          </div>
+        <div>
+      <label>E-mail Address</label>
         <input type="email">
       <h2></h2>
         <input type="submit">
-    </fieldset>
+        <input type="reset">
+      </div>
   </form>
 
 </body>

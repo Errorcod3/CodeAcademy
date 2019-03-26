@@ -1,0 +1,45 @@
+body {
+  text-align: center;
+  background-color: lightblue;
+}
+h1 {
+  color: blue;
+}
+h2 {
+  color: purple;
+}
+h3 {
+  text-align: left;
+}
+img {
+  position: relative;
+  border-radius: 100px;
+  width: 50%;
+}
+img:hover {
+  border-radius: 0px;
+}
+ol {
+  list-style-type: lower-alpha;
+  text-align: left;
+  display: inline-block;
+  position: absolute;
+  left: 20%;
+  width: 20%;
+}
+ul {
+  list-style-type: circle;
+  text-align: left;
+  display: inline-block;
+  position: absolute;
+  left: 60%;
+  width: 20%;
+}
+.top {
+  display: block;
+  position: relative;
+  top: 150px;
+  left: auto;
+  padding: 0px;
+  border-top: 5px solid grey;
+}
