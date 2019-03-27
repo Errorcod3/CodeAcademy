@@ -10,6 +10,9 @@ span {
 body {
     padding-left: 20%;
 }
+span:nth-child(even) {
+  background-color: grey;
+}
 .winner span {
   background-color: green;
 }
