@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+  background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/space.jpg);
+  color: white;
+  position: absolute;
+}
+img {
+  width: 200px;
+}
+p {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 75%;
+  display: inline-block;
+  left: 25%;
+}
+ul {
+  border-radius: 20px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5);
+  list-style-type: square;
+}
