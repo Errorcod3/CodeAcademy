@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flexPractice</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      color: white;
+      font-size: 36px;
+    }
+    .containerLeft{
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      height: 100%;
+      width: calc((100% / 3) * 2);
+    }
+    .containerRight{
+      display: flex;
+      flex-basis: auto;
+      flex-shrink: 1;
+      flex-grow: 1;
+      flex-direction: column;
+      width: calc(100% / 3);
+      height: 100%
+    }
+    .blueBox{
+      background-color: blue;
+      flex-shrink: 1;
+      flex-grow: 1;
+      width: 150px;
+      flex-wrap: wrap;
+      margin: 5px;
+      height: 150px;
+      align-self: flex-start;
+      align-content: flex-start;
+    }
+    .redBox {
+      background-color: red;
+      flex-shrink: 1;
+      flex-grow: 1;
+      align-items: stretch;
+      height: 100%;
+      margin: 5px;
+      width: 100%;
+    }
+    .orderMinus{
+      order: -1;
+    }
+    .orderOne{
+      order: 1;
+    }
+    .orderTwo{
+      order: 2;
+    }
+    .orderThree{
+      order: 3;
+    }
+    .orderFour{
+      order: 4;
+    }
+  </style>
+</head>
+
+<body>
+<div class="containerLeft">
+  <div class="blueBox orderMinus">1</div>
+  <div class="blueBox orderOne">2</div>
+  <div class="blueBox orderFour">3</div>
+  <div class="blueBox orderThree">4</div>
+  <div class="blueBox orderTwo">5</div>
+  <div class="blueBox">6</div>
+</div>
+<div class="containerRight">
+  <div class="redBox orderOne">1</div>
+  <div class="redBox orderMinus">2</div>
+  <div class="redBox">3</div>
+</div>
+
+</body>
+</html>
