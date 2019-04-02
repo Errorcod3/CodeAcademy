@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+    //ABOVE GROUND
+      var playerName = prompt("Enter Player Name: ");
+        console.log("West of House");
+        console.log("You are standing in an open field west of a white house, with a boarded front door.");
+
+      var actionOne = prompt("There is a small mailbox here. Would you like to open the mailbox?");
+        if(actionOne == "yes"){
+          var actionTwo = prompt("Opening the small mailbox reveals a leaflet. Would you like to open the leaflet?");
+        }
+        else{
+        console.log("Try Again.");
+        }
+
+      if(actionTwo == "yes"){
+        console.log(playerName + ", WELCOME TO ZORK!");
+        console.log("ZORK is a game of adventure, danger, and low cunning.");
+        console.log("In it you will explore some of the most amazing territory ever seen by mortals.");
+        console.log("No computer should be without one!");
+      }
+      else{
+        console.log("Try Again.");
+      }
+
+      var actionThree = prompt("Which cardinal direction would you like to go?");
+        if(actionThree == "north"){
+          console.log("You went North");
+        }
+        else if(actionThree == "south"){
+          console.log("You went South");
+        }
+        else if(actionThree == "east"){
+          console.log("You went East");
+        }
+        else if(actionThree == "west"){
+          console.log("You went West");
+        }
+        else{
+          console.log("Please choose a cardinal direction such as: 'east'");
+        }
+
+        //Reguarding the Theif
+
+
+    </script>
+  </body>
+</html>
