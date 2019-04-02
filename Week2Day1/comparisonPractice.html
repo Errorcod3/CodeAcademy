@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <body>
+    <script>
+      // Prompt for Name and Number
+      firstName = prompt("Enter First Name");
+      var randoNumber = Math.floor(Math.random() * 100) + 1;
+      numberGuess = prompt("Pick a number between 1-100");
+
+      // Compute ODD or EVEN for number
+      if(randoNumber%2 == 0){
+        console.log("Your number is EVEN.");
+      }
+      else if (randoNumber%2 != 0){
+        console.log("Your number is ODD.");
+      }
+      else{
+        console.log("You did not provide a number.")
+      }
+
+      // GreaterThan, Less Than, or Equal to 50
+      if(randoNumber == 50){
+        console.log("Your number is equal to 50.")
+      }
+      else if(randoNumber < 50){
+        console.log("Your number is less than 50.")
+      }
+      else if(randoNumber > 50){
+        console.log("Your number is greater than to 50.")
+      }
+      else {
+        console.log("You did not provide a number.")
+      }
+
+      // Number Count Down from 100 to their number
+      var zerod = 0;
+      while(zerod != randoNumber){
+        zerod = zerod + 1;
+        console.log(zerod);
+      }
+      var hund = 101;
+      while(hund != randoNumber){
+        hund = hund - 1;
+        console.log(hund);
+      }
+
+      // Name Test
+      var myName = "BENJI";
+      if(myName == firstName.toUpperCase()){
+        console.log("What a great name!");
+        }
+        else{
+          console.log("Welcome " + firstName);
+        }
+
+      // Array Test
+      var arrayOne = [-1,-2,2,10,7,8];
+      var arrayTwo = [4,-2,2,7,9,5];
+      var sameArrays = arrayOne.filter(e => arrayTwo.indexOf(e) !== -1);
+      console.log(sameArrays);
+      // "=>" == javascript arrow function
+      // (parameters) => { statements }
+      // function (parameters){ return expression; }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var i = 0;
+      var userPrompt = 0;
+      var randoNumber = Math.floor(Math.random() * 20000) + 1;
+      while(userPrompt != randoNumber){
+        for(var i = 0; i<1000; i++){
+          if(userPrompt == randoNumber){
+            break;
+          }
+           userPrompt = prompt("You've tried " + [i] + "X's', please guess again. The random number is: " + randoNumber);
+        }
+        while(userPrompt == randoNumber){
+          console.log("CONGRATS!!!");
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>

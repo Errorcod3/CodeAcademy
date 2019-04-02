@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var a = ""
+      var userPrompt = prompt("please enter > 4 chars");
+        if(userPrompt.length > 4){
+          for(i = 4; i < userPrompt.length; i++){
+            a = a + userPrompt[i];
+          }
+          console.log([a]);
+        }
+        else if(userPrompt.length <= 4){
+          console.log("You have not been cooperative, Goodbye.");
+        }
+    </script>
+  </body>
+</html>
