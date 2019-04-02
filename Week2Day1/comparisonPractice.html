@@ -56,13 +56,22 @@
         }
 
       // Array Test
-      var arrayOne = [-1,-2,2,10,7,8];
-      var arrayTwo = [4,-2,2,7,9,5];
-      var sameArrays = arrayOne.filter(e => arrayTwo.indexOf(e) !== -1);
-      console.log(sameArrays);
+      // var arrayOne = [-1,-2,2,10,7,8];
+      // var arrayTwo = [4,-2,2,7,9,5];
+      // var sameArrays = arrayOne.filter(e => arrayTwo.indexOf(e) !== -1);
+      // console.log(sameArrays);
       // "=>" == javascript arrow function
       // (parameters) => { statements }
       // function (parameters){ return expression; }
+      var counter = 0;
+      for(i=0, i<arrayOne.length, i++){
+        for(j=0, j<arrayTwo.length, j++){
+          if(arrayOne[i] == arrayTwo[j]){
+          counter++;
+        }
+        }
+      }
+      console.log(counter)
     </script>
 
   </body>

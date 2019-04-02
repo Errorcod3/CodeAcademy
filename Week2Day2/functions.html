@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+      /* Absolute Value Function */
+      function absoluteValue(num){
+        if(num < 0){
+          console.log(num * -1);
+          }
+        else if(num >= 0){
+          console.log(num);
+        }
+        else{
+          console.log("You did not provide a number.")
+        }
+      }
+      absoluteValue(-55);
+
+      /* Power of a Number */
+      function powerValue(baseNum,powNum){
+        var startNum = baseNum;
+        for(i = 2; i <= powNum; i++){
+          baseNum *= startNum;
+          }
+          console.log(baseNum);
+        }
+        powerValue(13,2);
+
+      /* Palindrome Fuction */
+       function palindrome(phrase){
+         phrase = phrase.toUpperCase().split(" ").join("");
+         var reverse = phrase;
+         reverse = reverse.split("").reverse().join("");
+         return phrase == reverse;
+      }
+      console.log(palindrome("TACO CAT"));
+      console.log(palindrome("Apple Dollar"));
+
+      // stng = word.length
+      // for(i = 0; i <= stng; i++){
+      //   var j = stng;
+      //   console.log(array[j]);
+      //   j--;
+
+      /* Banned Words Function */
+      var words = ["apple", "banana", "orange", "blueberry"];
+      var bannedWords = ["watermelon", "kiwano", "passion fruit", "orange"];
+      function readact(toCheck, banned){
+        for(var i = 0; i < toCheck.length; i++){
+          for(var j = 0; j< banned.length; j++){
+            if(toCheck[i] == banned[j]){
+              toCheck[i] = "REDACTED";
+            }
+          }
+        }
+        return toCheck;
+      }
+      var redactedWords = readact(words, bannedWords);
+      console.log(redactedWords);
+
+      /* FizzBuzz version 1 */
+      function buzzFizz(i){
+          if(i%2 == 0 && i%3 == 0){
+            console.log(i + "-" +  "FizzBuzz");
+          }
+          else if(i%2 == 0){
+            console.log(i + "-" + "Fizz");
+          }
+          else if(i%3 == 0){
+            console.log(i + "-" +  "Buzz");
+          }
+          else{
+            console.log(i);
+          }
+        }
+
+      /* FizzBuzz version 2 */
+      function fizzBuzz(numA,numB){
+        if(numA > numB){
+          while(numB < numA){
+            numB++;
+            console.log(buzzFizz(numB));
+          }
+        }
+        else if(numA < numB){
+          while(numA < numB){
+            numB--;
+            console.log(buzzFizz(numB));
+          }
+        }
+        else if(numA = numB){
+          console.log();
+        }
+        else{
+          console.log("You did not provide numbers within parameters.");
+        }
+      }
+      console.log(fizzBuzz(64,44));
+      console.log(fizzBuzz(44,64));
+      console.log(fizzBuzz(44,44));
+
+      //Day of the week Function
+      // var birthday = new Date('October 3, 1987');
+      // var day1 = birthday.getDay();
+      // function dayWeek(date){
+      //   var date = new Date();
+      //   var weekday = new Array(7);
+      //     weekday[0] = "Sunday";
+      //     weekday[1] = "Monday";
+      //     weekday[2] = "Tuesday";
+      //     weekday[3] = "Wednesday";
+      //     weekday[4] = "Thursday";
+      //     weekday[5] = "Friday";
+      //     weekday[6] = "Saturday";
+      //   var n = weekday[day1.getDay()];
+      // }
+      // console.log(dayWeek(day1));
+
+      //Day of the week Function - no library
+      
+
+
+
+
+    </script>
+  </body>
+</html>
