@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Website</title>
+    <style>
+      div{
+        width: calc(100% - 20px);
+        height: 190px;
+        margin: 10px;
+      }
+    </style>
+    <script>console.log(document.querySelectorAll('.someDiv'))</script>
+  </head>
+  <body>
+    <div class="divs"></div>
+    <div class="divs"></div>
+    <div class="divs"></div>
+    <button onclick="changeColors()">Change Colors!</button>
+    <script>
+      var timer = 0
+      var counter = window.setInterval(function(){
+        document.getElementsByClassName('divs').innerHTML = timer;
+        timer--;
+      }, 1000);
+      // console.log(document.getElementsByClassName('divs'));
+        window.setInterval(function(){
+          function randomColor(){
+            return Math.floor(Math.random()*256);
+          }
+          var divs = document.getElementsByClassName('divs');
+          for(var i = 0; i < divs.length; i++){
+            divs[i].style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+          }
+        }, 2000);
+      </script>
+  </body>
+</html>

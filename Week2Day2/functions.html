@@ -105,28 +105,23 @@
       console.log(fizzBuzz(44,44));
 
       //Day of the week Function
-      // var birthday = new Date('October 3, 1987');
-      // var day1 = birthday.getDay();
-      // function dayWeek(date){
-      //   var date = new Date();
-      //   var weekday = new Array(7);
-      //     weekday[0] = "Sunday";
-      //     weekday[1] = "Monday";
-      //     weekday[2] = "Tuesday";
-      //     weekday[3] = "Wednesday";
-      //     weekday[4] = "Thursday";
-      //     weekday[5] = "Friday";
-      //     weekday[6] = "Saturday";
-      //   var n = weekday[day1.getDay()];
-      // }
-      // console.log(dayWeek(day1));
+      var dayOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+      var d = new Date(prompt("Enter a date in the format \"Month Day, Year\""));
+        console.log(dayOfWeek[d.getDay()]);
 
       //Day of the week Function - no library
+
+
+      //Splittable pizza
+      function isSplitt(numPeople, numSlices){
+        if(numSlices % numPeople == 0){
+          return "can be split";
+        }
+        else{
+          return 'cannot split, ${numPeople - numSlices} without food'
+        }
+      }
       
-
-
-
-
     </script>
   </body>
 </html>

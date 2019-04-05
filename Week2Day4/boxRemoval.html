@@ -1,0 +1,115 @@
+<!--
+The goal for this mini-project will be the follwing:
+
+1) When a user clicks a box on the left, remove the corresponding box in the right.
+2) If the box on the right is missing, re-add it to the bottom of the divs on the right.
+3) Use DRY whenever possible for this.
+4) For added challenge, whenever you add re-add a div to the right. Add it where it should go in numerical order
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .left{
+        float: left;
+        width: 70%;
+      }
+      .right{
+        width: 30%;
+        float: left;
+      }
+      .leftDiv{
+        line-height: 200px;
+        text-align: center;
+        cursor: pointer;
+        width: calc(100%/3 - 4px);
+        margin: 2px;
+        height: 200px;
+        background-color: red;
+        color: white;
+        float: left;
+      }
+
+      .rightDiv{
+        line-height: 98px;
+        text-align: center;
+        cursor: pointer;
+        height: 98px;
+        float: left;
+        width: calc(50% - 4px);
+        margin: 2px;
+        background-color: orange;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div class="leftDiv" id="l1">1</div>
+      <div class="leftDiv" id="l2">2</div>
+      <div class="leftDiv" id="l3">3</div>
+      <div class="leftDiv" id="l4">4</div>
+      <div class="leftDiv" id="l5">5</div>
+      <div class="leftDiv" id="l6">6</div>
+      <div class="leftDiv" id="l7">7</div>
+      <div class="leftDiv" id="l8">8</div>
+      <div class="leftDiv" id="l9">9</div>
+    </div>
+
+    <div class="right">
+      <div class="rightDiv" id="r1">1</div>
+      <div class="rightDiv" id="r2">2</div>
+      <div class="rightDiv" id="r3">3</div>
+      <div class="rightDiv" id="r4">4</div>
+      <div class="rightDiv" id="r5">5</div>
+      <div class="rightDiv" id="r6">6</div>
+      <div class="rightDiv" id="r7">7</div>
+      <div class="rightDiv" id="r8">8</div>
+      <div class="rightDiv" id="r9">9</div>
+    </div>
+    <script>
+
+      var left = document.querySelectorAll('.leftDIV'){
+        left.forEach(function(val){
+          val.addEventListener("click", function(){
+            var idNum = this.id[1];
+            var right = document.querySelector("#r"+idNum)
+            if(right){
+              right.remove();
+            }
+            else{
+              createElement(idNum);
+            }
+          })
+        })
+        function createElement(id){
+          var container = document.querySelector(".right");
+          var newDiv = document.createElement("div");
+          newDiv.id = "r"+id;
+          newDiv.classList.add('rightDiv');
+          newDiv.innerText = id;
+          container.append(newDiv);
+        }
+
+
+      /* var elem = document.querySelector('val');
+        elem.style.display = 'none';
+
+        <!-- var childElements = document.getElementsByClassName('leftDiv');
+        var buttonElement = document.getElementsByClassName('rButton');
+        function deleteItem(rButton, leftDiv) {
+          for (var i=0;i<rButton.length;i++) {
+            var child = leftDiv[i];
+            rButton[i].addEventListener('click', function(child) {
+              leftDiv[i].parentNode.removeChild(leftDiv[i]);
+            }, false);
+          }
+        }
+        deleteItem(rButton, leftDiv); */
+    </script>
+  </body>
+</html>
