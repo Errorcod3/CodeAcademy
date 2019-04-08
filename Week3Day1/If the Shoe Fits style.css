@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC|Rosarivo');
+
+
+.background{
+background-image:  url("https://cdn4.vectorstock.com/i/1000x1000/34/18/seamless-wallpaper-bavarian-oktoberfest-flag-vector-21803418.jpg");
+background-repeat: repeat;
+z-index: -1;
+position: absolute;
+width: 100%;
+height:100%;
+opacity: 0.3;
+}
+h1{
+  display: inline-block;
+  align: center;  
+}
+.header{
+    width: 100%;
+    height: 150px;
+    background-color: #298AF0;
+    color: #F1F3F9;
+    text-align: center;
+    line-height: 150px;    
+    font-family: 'Rosarivo', serif;
+    overflow: hidden;
+    font-size: 2.2em;
+}
+.headerImg {
+    width:200px;
+    float: right;
+    padding-right: 1%;
+    line-height: 100px;
+    display: inline-block;
+}
+.nav{
+    width: 100%;
+    
+}
+.navDiv {
+    width: calc(33% - 12px);
+    height: 75px;
+    margin: 5px;
+    display: inline-block;
+    font-family: 'Playfair Display SC', serif;
+    text-align: center;
+    line-height: 30px;
+    background-color: #022B3A;
+    color:  #F1F3F9;
+    bottom: 0px;
+    overflow: hidden;
+    
+}
+a:link{
+    text-decoration: none;
+    color: #F1F3F9;
+}
+.navActive{
+    background-color: #298AF0;
+}
+.main{
+width: 70%;
+float: right;
+} 
+.aside{
+    width: 30%;
+    float: left;
+}
+.mainDiv {
+    background-color: #BFDBF7;
+    display: inline-block;
+    width: 100%; 
+    margin: 10px;
+    width: calc(100% - 22px);
+    color: #022B3A;
+    font-family: 'Rosarivo', serif;
+    padding: 10px;
+    line-height: 2;
+    
+}
+.asideDiv {
+    background-color: #022B3A;
+    width: calc(100% - 12px);
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    color:  #F1F3F9;
+    font-family: 'Playfair Display SC', serif;
+   
+
+}
+
+
+.footer {
+background-color: #298AF0;
+position: fixed;
+bottom: 0;
+width: 100%;
+text-align: center; 
+line-height: 50px; 
+color:  #F1F3F9;
+font-family: 'Rosarivo', serif;
+margin-top: 5px;
+padding-bottom: 10px;
+}
+
+.footerIcon{
+    width:25px;
+    margin-left: 12px;
+    margin-bottom: 0px;
+    display: inline-block;
+    align: center;
+    vertical-align: middle;
+    
+}
+.footerDiv{
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: inline-block;
+    line-height:normal;
+}
+.footerText{
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+form{
+    text-align: center;
+}
+.subMain{
+    background-color: #BFDBF7;
+    width: calc(100% - 12px);
+    margin: 5px;
+    text-align: center;
+    /* line-height: 50px; */
+    color:  black;
+}
+.imageResizeFloatLeft{
+     /* width: 8vw; */
+     max-height: 150px;
+      max-width: 150px;
+    float: Left;  
+    margin-right: 2vw;
+    
+}
+.subTitleTextLeft{
+    text-align: left;
+    float: top;
+}
+.subDTextLeft{
+    text-align: left;
+    float: top;
+}
+
+@media (max-width: 700px){
+
+    .header{
+        width: 100%;
+        height: 75px;
+        line-height: 75px;    
+        font-size: 1em;
+    }
+    .headerImg {
+        width:100px;
+        padding: 5px;
+        padding-right: 50px;
+        line-height: 50px;
+    }
+ 
+
+    .navDiv {
+        width: calc(33% - 12px);
+        height: 35px;
+        margin: 3px;
+        line-height: 15px;
+        font-size: 12px;
+    }
+
+   
+    .mainDiv {
+        width: 100%; 
+        margin: 10px;
+        width: calc(100% - 11px);
+        padding: 5px;
+        line-height: 1;
+        
+    }
+    .asideDiv {
+        width: calc(100% - 7px);
+        margin: 2px;
+        line-height: 25px;
+    }
+    .footer {
+    line-height: 25px; 
+    margin-top: 2px;
+    padding-bottom: 5px;
+    }
+    .footerIcon{
+        width:15px;
+        margin-left: 6px;
+        padding-top: 6px;
+    }
+    .footerDiv{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .footerText{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+ 
+    .subMain{
+        width: calc(100% - 6px);
+        margin: 2px;
+    }
+    .imageResizeFloatLeft{
+         max-height: 75px;
+          max-width: 75px; 
+        margin-right: 1vw;
+        margin-bottom: 1vh;
+    }
