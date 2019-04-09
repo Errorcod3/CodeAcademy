@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> OMDB Search</title>
+<style>
+body{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+  header{
+    width:100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+  }
+  #resultsArea{
+    display: flex;
+    flex-flow:row wrap;
+    width: 100%;
+  }
+  #resultsArea div{
+    flex: 1 1 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(25% - 22px);
+    border: 1px solid white;
+    vertical-align: middle;
+    margin: 10px;
+  }
+  h1{
+    font-size: 20px;
+  }
+  form{
+    display: block;
+    width: 100%;
+  }
+</style>
+
+
+</head>
+<body>
+<header>OMDB Search Page</header>
+ <form style="display: block;">
+   <label for="search">Search</label>
+   <input id="search" type="search" value="">
+   <label for="type">Type</label>
+   <select id="type">
+     <option value=""></option>
+     <option value="Movie">Movie</option>
+     <option value="Series">Series</option>
+     <option value="Episode">Episode</option>
+   </select>
+   <label for="year">Release Year</label>
+   <input id="year" type="number" min="1888" max="2022" value="">
+   <input id="submit" type="submit">
+ </form>
+
+ <div id="resultsArea">
+
+ </div>
+
+ <p id="totalResults"></p>
+
+
+
+
+
+ <script>
+
+   document.getElementById('submit').addEventListener("click", function(e){
+     e.preventDefault()
+     var q ="http://www.omdbapi.com/?apikey=882ce559&";
+     var s = document.getElementById('search')
+     console.log(s);
+     var type = document.getElementById('type')
+     var y = document.getElementById('year')
+     if(s.value.length < 3){
+       console.log("Nothing in search")
+     }
+     else{
+         q += 's=' + s.value;
+       if(type.value){
+         q += '&type=' + type.value;
+       }
+       if(y.value){
+         q += '&y=' + y.value;
+       }
+       console.log(q);
+       fetch(q)
+       .then(function(response){
+         if(!response.ok){
+           console.log("Something went wrong.")
+         }
+         return response.json();
+       })
+       .then(function(res){
+         console.log(res.totalResults);
+         document.getElementById("totalResults").innerHTML="Total Results: " + JSON.stringify(res.totalResults);
+         console.log(res.Search.length)
+         var rCont = document.getElementById("resultsArea")
+         res.Search.forEach(function(item){
+           var div = document.createElement("div");
+           var h1 = document.createElement("h1");
+           var img = document.createElement("img");
+           h1.innerHTML= item.Title + " - " + item.Year;
+           img.src=item.Poster
+           div.append(h1)
+           div.append(img)
+           rCont.append(div)
+
+         })
+       })
+     }
+   })
+
+ </script>
+
+</body>
+</html>
