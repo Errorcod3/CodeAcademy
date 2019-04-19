@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Can I get your number?</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <style>
+        .background {
+            background-image: url("https://img.freepik.com/free-vector/seamless-colorful-mathematical-symbol-pattern-white-background_3119-1.jpg");
+            background-repeat: repeat;
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        body {
+            font-family: 'Play', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Press Start 2P', cursive;
+            line-height: 100px;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        .userSearch {
+            display: flex;
+            flex-flow: column;
+            align-items: stretch;
+            height: 100vh;
+        }
+
+        .selector {
+            display: flex;
+            margin: auto;
+            box-shadow: 0px 0px 10px 5px black;
+            align-self: stretch;
+        }
+
+        .results {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #number {
+            font-size: 60px;
+            font-weight: bolder;
+        }
+
+        #text {
+            font-size: 40px;
+        }
+        .signUp {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+<body>
+    <div class="background"></div>
+
+    <div class="userSearch container-fluid text-justify">
+        <div class="selector">
+            <input placeholder="First name" id="firstName" type="text" value="">
+            <input placeholder="Last name" id="lastName" type="text" value="">
+            <input placeholder="email name" id="emailName" type="text" value="">
+        </div>
+        <div class="selector">
+            <input type="radio" name="money" value="free">FREE<br>
+            <input type="radio" name="money" value="cheap">Cheap<br>
+            <input type="radio" name="money" value="notAsCheap">Not as cheap<br>
+            <input type="radio" name="money" value="expensive">Expensive<br>
+        </div>
+        <div class="selector">
+            <input type="checkbox" name="check1" value="email">Notify email<br>
+            <input type="checkbox" name="check2" value="text">Notify text<br>
+            <input type="checkbox" name="check3" value="call">Notify call<br>
+            <input type="hidden" name="customerId" id="customerId" value="8675309">
+        </div>
+        <div class="selector">
+            <button class="btn btn-info" id="submit">Submit</button>
+        </div>
+        <div id="success">
+            <div>
+                <a href="./cigyn.html" class="signUp btn btn-link fixed-bottom">Take me back!</a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        document.getElementById('submit').addEventListener("click", function (e) {
+            e.preventDefault();
+            var userData = { firstName: firstName.value, lastName: lastName.value, emailName: emailName.value };
+            var headers = new Headers();
+            headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+            headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+            headers.append("Content-Type", "application/json");
+            fetch('https://jsonplaceholder.typicode.com/posts/', {
+                method: 'POST', body: JSON.stringify(userData), headers: headers
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    document.getElementById("success").innerText = "Registration successful";
+                })
+        })
+    </script>
+</body>
+</head>
+
+</html>

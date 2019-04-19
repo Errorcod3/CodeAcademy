@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Can I get your number?</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <style>
+        .background {
+            background-image: url("https://img.freepik.com/free-vector/seamless-colorful-mathematical-symbol-pattern-white-background_3119-1.jpg");
+            background-repeat: repeat;
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        body {
+            font-family: 'Play', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'Press Start 2P', cursive;
+            line-height: 100px;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        .userSearch {
+            display: flex;
+        }
+
+        .selector {
+            display: flex;
+            margin: auto;
+            box-shadow: 0px 0px 10px 5px black;
+        }
+
+        .results {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #number {
+            font-size: 60px;
+            font-weight: bolder;
+        }
+
+        #text {
+            font-size: 40px;
+        }
+
+        .signUp {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="background">
+
+    </div>
+    <h1 class="text-info">Can I get your number?</h1>
+
+
+    <div class="userSearch container-fluid text-justify">
+        <div class="selector">
+            <input type="number" id="userYear" class="year" value="" min="1500" max="2022" placeholder="Year">
+            <button class="btn btn-info" id="year">Year</button>
+        </div>
+        <div class="selector">
+            <input type="number" class="userNumber" id="numberValue" placeholder="Your digits" value="">
+            <button class="btn btn-info" id="math">Math</button>
+            <button class="btn btn-info" id="trivia">Trivia</button>
+        </div>
+        <div class="selector">
+            <select name="random" id="random">
+                <option value=""></option>
+                <option value="trivia" id="rTrivia">Trivia</option>
+                <option value="math" id="rMath">Math</option>
+                <option value="date" id="rDate">Date</option>
+                <option value="year" id="rYear">Year</option>
+            </select>
+            <button class="btn btn-info" id="bRandom">Random</button>
+        </div>
+        <div class="selector">
+            <input type="number" class="date" id="day" min="1" max="31" value="" placeholder="Day">
+            <input type="number" class="month" id="month" min="1" max="12" value="" style="width:80px;"
+                placeholder="Month">
+            <button class="btn btn-info" id="date">Date</button>
+        </div>
+    </div>
+
+    <div id="number" class="results"></div>
+
+    <div id="text" class="results"></div>
+    <a href="./cigynSignUp.html" class="signUp btn btn-link fixed-bottom">Give me your number here!</a>
+    
+
+    <script>
+        //Year button
+        document.getElementById('year').addEventListener("click", function (e) {
+            e.preventDefault()
+            var getUrl = "https://numbersapi.p.rapidapi.com/";
+            var userYear = document.getElementById('userYear');
+            getUrl += userYear.value + "/year?fragment=true&json=true";
+            var headers = new Headers();
+            headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+            headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+            fetch(getUrl, { method: 'GET', headers: headers })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (res) {
+                    document.getElementById("number").innerHTML = JSON.stringify(res.number);
+                    document.getElementById("text").innerHTML = JSON.stringify(res.text);
+                })
+        })
+        //Date button
+        document.getElementById('date').addEventListener("click", function (e) {
+            e.preventDefault()
+            var getUrl = "https://numbersapi.p.rapidapi.com/";
+            var userDay = document.getElementById('day');
+            var userMonth = document.getElementById('month');
+            getUrl += userMonth.value + "/" + userDay.value + "/date?fragment=true&json=true";
+            var headers = new Headers();
+            headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+            headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+            fetch(getUrl, { method: 'GET', headers: headers })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (res) {
+                    document.getElementById("number").innerHTML = JSON.stringify(res.number);
+                    document.getElementById("text").innerHTML = JSON.stringify(res.text);
+                })
+        })
+        // Math button
+        document.getElementById('math').addEventListener("click", function (e) {
+            e.preventDefault()
+            var getUrl = "https://numbersapi.p.rapidapi.com/";
+            var userMath = document.getElementById('numberValue');
+            getUrl += userMath.value + "/math?fragment=true&json=true";
+            var headers = new Headers();
+            headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+            headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+            fetch(getUrl, { method: 'GET', headers: headers })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (res) {
+                    document.getElementById("number").innerHTML = JSON.stringify(res.number);
+                    document.getElementById("text").innerHTML = JSON.stringify(res.text);
+                })
+        })
+        //Trivia button
+        document.getElementById('trivia').addEventListener("click", function (e) {
+            e.preventDefault()
+            var getUrl = "https://numbersapi.p.rapidapi.com/";
+            var userMath = document.getElementById('numberValue');
+            getUrl += userMath.value + "/trivia?fragment=true&json=true";
+            var headers = new Headers();
+            headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+            headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+            fetch(getUrl, { method: 'GET', headers: headers })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (res) {
+                    document.getElementById("number").innerHTML = JSON.stringify(res.number);
+                    document.getElementById("text").innerHTML = JSON.stringify(res.text);
+                })
+        })
+        //Random button
+        document.getElementById('bRandom').addEventListener("click", function (e) {
+            e.preventDefault()
+            var getUrl = "https://numbersapi.p.rapidapi.com/random/";
+            var userMath = document.getElementById('random');
+            getUrl += userMath.value + "?fragment=true&json=true";
+            var headers = new Headers();
+            headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+            headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+            fetch(getUrl, { method: 'GET', headers: headers })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (res) {
+                    document.getElementById("number").innerHTML = JSON.stringify(res.number);
+                    document.getElementById("text").innerHTML = JSON.stringify(res.text);
+                })
+        })
+
+
+        // Helpers
+
+        // function fetchInfo() {
+        //     fetch(getUrl, { method: 'GET', headers: headers })
+        //         .then(function (response) {
+        //             return response.json();
+        //         })
+        //         .then(function (res) {
+        //             document.getElementById("number").innerHTML = JSON.stringify(res.number);
+        //             document.getElementById("text").innerHTML = JSON.stringify(res.text);
+        //         })
+        // }
+
+
+        // function apiHeaders() {
+        //     var headers = new Headers();
+        //     headers.append("X-RapidAPI-Host", "numbersapi.p.rapidapi.com");
+        //     headers.append("X-RapidAPI-Key", "371fc67992mshe08c02135331771p1888dfjsnf454a929b520");
+        // }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
